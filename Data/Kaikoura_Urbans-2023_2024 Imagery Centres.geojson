@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Kaikoura_Urbans-2023_2024 Imagery Centres",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Project": "PGRM3152", "Company_Name": null, "SN_No": null, "Description": null, "OrthoGSD_m": null, "PointDensity_(points/m2)": null, "Area": 4.5821631604873927, "Percentage_Coverage": null }, "geometry": { "type": "Point", "coordinates": [ 173.671901036195948, -42.404847744276758 ] } }
+]
+}
