@@ -20,8 +20,8 @@
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/satellite-streets-v12',
-      center: [171.604271, -43.692146],
-      zoom: 6.80
+      center: [171.211, -44.010],
+      zoom: 7.5
     });
 
     map.on('load', function () {
@@ -29,7 +29,7 @@
 
       map.addSource('ProjectArea', {
         type: 'geojson',
-        data: 'Data/Kaikoura_Urbans-2023_2024 - Project_Area.geojson'
+        data: 'Data/Christchurch_Urban_2024_2025 - Project_Area.geojson'
       });
 
       map.addLayer({
@@ -38,13 +38,13 @@
         source: 'ProjectArea',
         paint: {
           'fill-color': 'blue',
-          'fill-opacity': 0.5
+          'fill-opacity': 0.0
         }
       });
 
       map.addSource('CoverageSource', {
         type: 'geojson',
-        data: 'Data/Kaikoura_Urbans-2023_2024 - Captured_Area.geojson'
+        data: 'Data/Christchurch_Urban_2024_2025 - Captured_Area.geojson'
       });
 
       map.addLayer({
@@ -59,7 +59,7 @@
 
       map.addSource('ProjectCentre', {
         type: 'geojson',
-        data: 'Data/Kaikoura_Urbans-2023_2024 Imagery Centres.geojson'
+        data: 'Data/Christchurch_Urban_2024_2025 - Imagery_Centres.geojson'
       });
 
       map.addLayer({
@@ -90,10 +90,10 @@
           const featureProject = featuresProject[0];
 
           const coordinates = featurePCentre.geometry.coordinates.slice();
-          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.DISTRICT_N + "</b></br>" +
+          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.Name + "</b></br>" +
                               "<span style='color: black;'><b>Project Code: </b>" + featurePCentre.properties.Project + "</br>" +
                               "<b>Survey Type: </b>" + featureProject.properties.Survey_Typ + "</br>" +
-                              "<b>Imagery GSD: </b>" + featureProject.properties.GSD + "</br>" +
+                              "<b>Imagery GSD: </b>" + featureProject.properties.OrthoGSD_m + "</br>" +
                               //"<b>Point Density: </b>" + featurePCentre.properties.Point_Dens + "</br>" +
                               "<b>Area: </b>" + (featurePCentre.properties.Area).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })+ " km²</br>" +
                               "<b>Captured Area: </b>" + (featureCoverage.properties.Area).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " km²</br>" +
@@ -102,7 +102,7 @@
           var popupContent = document.createElement('div');
           popupContent.innerHTML = description;
 
-          var popup = new mapboxgl.Popup({ closeOnClick: false })
+          var popup = new mapboxgl.Popup({ closeOnClick: true })
             .setLngLat(coordinates)
             .setDOMContent(popupContent)
             .addTo(map);
@@ -123,7 +123,7 @@
 
       map.addSource('ProjectArea2', {
         type: 'geojson',
-        data: 'Data/Ashburton_Urbans-2023_2024 - Project_Area.geojson'
+        data: 'Data/Chch_CBD_Urban_2024_2025 - Project_Area.geojson'
       });
 
       map.addLayer({
@@ -138,7 +138,7 @@
 
       map.addSource('CoverageSource2', {
         type: 'geojson',
-        data: 'Data/Ashburton_Urbans-2023_2024 - Captured_Area.geojson'
+        data: 'Data/Chch_CBD_Urban_2024_2025 - Captured_Area.geojson'
       });
 
       map.addLayer({
@@ -147,13 +147,13 @@
         source: 'CoverageSource2',
         paint: {
           'fill-color': '#FF0000',
-          'fill-opacity': 0.5
+          'fill-opacity': 0.0
         }
       });
 
       map.addSource('ProjectCentre2', {
         type: 'geojson',
-        data: 'Data/Ashburton_Urbas-2023_2024 Imagery Centres.geojson'
+        data: 'Data/Chch_CBD_Urban_2024_2025 - Imagery_Centres.geojson'
       });
 
       map.addLayer({
@@ -184,7 +184,7 @@
           const featureProject = featuresProject[0];
 
           const coordinates = featurePCentre.geometry.coordinates.slice();
-          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.DISTRICT_N + "</b></br>" +
+          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.Name + "</b></br>" +
                               "<span style='color: black;'><b>Project Code: </b>" + featurePCentre.properties.Project + "</br>" +
                               "<b>Survey Type: </b>" + featureProject.properties.Survey_Typ + "</br>" +
                               "<b>Imagery GSD: </b>" + featureProject.properties.GSD + "</br>" +
@@ -196,7 +196,7 @@
           var popupContent = document.createElement('div');
           popupContent.innerHTML = description;
 
-          var popup = new mapboxgl.Popup({  closeOnClick: false })
+          var popup = new mapboxgl.Popup({  closeOnClick: true })
             .setLngLat(coordinates)
             .setDOMContent(popupContent)
             .addTo(map);
@@ -217,7 +217,7 @@
 
       map.addSource('ProjectArea3', {
         type: 'geojson',
-        data: 'Data/Waitaki_Ubrans-2023_2024 - Project_Area.geojson'
+        data: 'Data/Waimate_Urban_2024_2025 - Project_Area.geojson'
       });
 
       map.addLayer({
@@ -232,7 +232,7 @@
 
       map.addSource('CoverageSource3', {
         type: 'geojson',
-        data: 'Data/Waitaki_Ubrans-2023_2024 - Captured_Area.geojson'
+        data: 'Data/Waimate_Urban_2024_2025 - Captured_Area.geojson'
       });
 
       map.addLayer({
@@ -241,13 +241,13 @@
         source: 'CoverageSource3',
         paint: {
           'fill-color': '#FF0000',
-          'fill-opacity': 0.5
+          'fill-opacity': 0.0
         }
       });
 
       map.addSource('ProjectCentre3', {
         type: 'geojson',
-        data: 'Data/Waitaki_Ubrans-2023_2024 Imagery Centres.geojson'
+        data: 'Data/Waimate_Urban_2024_2025 - Imagery_Centres.geojson'
       });
 
       map.addLayer({
@@ -278,10 +278,10 @@
           const featureProject = featuresProject[0];
 
           const coordinates = featurePCentre.geometry.coordinates.slice();
-          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.DISTRICT_N + "</b></br>" +
+          const description = "<span style='color: #7FBA00;font-size: 14px;'><b>" + featureProject.properties.Name + "</b></br>" +
                               "<span style='color: black;'><b>Project Code: </b>" + featurePCentre.properties.Project + "</br>" +
                               "<b>Survey Type: </b>" + featureProject.properties.Survey_Typ + "</br>" +
-                              "<b>Imagery GSD: </b>" + featureProject.properties.GSD + "</br>" +
+                              "<b>Imagery GSD: </b>" + featureProject.properties.OrthoGSD_m + "</br>" +
                               //"<b>Point Density: </b>" + featurePCentre.properties.Point_Dens + "</br>" +
                               "<b>Area: </b>" + (featurePCentre.properties.Area).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })+ " km²</br>" +
                               "<b>Captured Area: </b>" + (featureCoverage.properties.Area).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " km²</br>" +
