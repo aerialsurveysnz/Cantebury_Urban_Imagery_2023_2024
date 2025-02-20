@@ -14,7 +14,7 @@
             "properties": {
                 "Name": "Christchurch CBD",
                 "Survey_Typ": "Imagery",
-                "GSD": 0.075,
+                "GSD": 0.05,
                 "Project": "PGRM3214",
                 "SN_No": null,
                 "Company_Name": null,
