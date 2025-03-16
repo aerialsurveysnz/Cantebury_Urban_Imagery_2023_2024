@@ -13,9 +13,7 @@
             "type": "Feature",
             "properties": {
                 "OBJECTID": 1,
-                "Name": "Christchurch Urban",
-                "Survey_Typ": "Imagery",
-                "OrthoGSD_m": 0.075,
+                "Location": "Akaroa Harbour (including Pigeon Bay and Kukupa)",
                 "AREA_SQ_KM": 31.3632,
                 "Schedule": "CU1",
                 "Shape_Length": 80880.0,
@@ -24,8 +22,8 @@
                 "SN_No": null,
                 "Company_Name": null,
                 "Description": null,
-                "Area": 592.64585935623359,
-                "Percentage_Coverage": 100.0
+                "Area": 0,
+                "Percentage_Coverage": 0.0
             },
             "geometry": {
                 "type": "MultiPolygon",
